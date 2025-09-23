@@ -1,10 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Learn By Fun</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    .header {
+      background: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+    .icon {
+      width: 150px;
+      border-radius: 20px;
+    }
+    .screenshots {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      padding: 10px 0;
+    }
+    .screenshots img {
+      max-height: 400px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    .features {
+      margin-top: 20px;
+    }
+    .features li {
+      margin: 10px 0;
+    }
+    /* Interactive tab */
+    .tabs {
+      margin-top: 20px;
+    }
+    .tabs button {
+      padding: 10px 15px;
+      margin-right: 5px;
+      border: none;
+      background: #ddd;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .tabs button.active {
+      background: #4CAF50;
+      color: white;
+    }
+    .tab-content {
+      margin-top: 10px;
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to Learn By Fun</h1>
-  <p>This is the official developer website for the app.</p>
+
+  <div class="header">
+    <h1>Learn By Fun</h1>
+    <p>By NextDay Software Solutions Pvt Ltd</p>
+  </div>
+
+  <div class="container">
+    <!-- Icon + short info -->
+    <div style="text-align: center;">
+      <img class="icon" src="https://play.google.com/store/apps/details?id=com.nextdaysoft.learn_by_fun" alt="App Icon" onerror="this.src='https://play.google.com/favicon.ico'">
+      <!-- Note: real icon URL should be taken from Google Play screenshot src -->
+    </div>
+
+    <h2>About this app</h2>
+    <p>Welcome to <strong>“Learn by Fun,”</strong> the ultimate educational app for children to explore and discover the fascinating world of fruits, animals, modes of transport, and alphabets! <br>
+    “Learn by Fun” is the perfect companion for parents and educators looking to make learning an enjoyable and enriching experience for children. Download now and watch your child’s curiosity and knowledge soar! :contentReference[oaicite:0]{index=0}</p>
+
+    <!-- Screenshots carousel / gallery -->
+    <h3>Screenshots</h3>
+    <div class="screenshots">
+      <img src="https://play.google.com/store/apps/details?id=com.nextdaysoft.learn_by_fun" alt="Screenshot 1">
+      <img src="https://play.google.com/store/apps/details?id=com.nextdaysoft.learn_by_fun" alt="Screenshot 2">
+      <img src="https://play.google.com/store/apps/details?id=com.nextdaysoft.learn_by_fun" alt="Screenshot 3">
+      <img src="https://play.google.com/store/apps/details?id=com.nextdaysoft.learn_by_fun" alt="Screenshot 4">
+      <img src="https://play.google.com/store/apps/details?id=com.nextdaysoft.learn_by_fun" alt="Screenshot 5">
+    </div>
+
+    <!-- Button to go to Play Store -->
+    <div style="text-align: center;">
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.nextdaysoft.learn_by_fun" target="_blank">View on Google Play</a>
+    </div>
+
+    <div class="features">
+      <h3>Features</h3>
+      <ul>
+        <li>Explore alphabets, fruits, animals, and modes of transport.</li>
+        <li>Colorful graphics and child‑friendly design. :contentReference[oaicite:1]{index=1}</li>
+        <li>Ideal for early learning and discovery. :contentReference[oaicite:2]{index=2}</li>
+        <li>Contains ads. :contentReference[oaicite:3]{index=3}</li>
+      </ul>
+    </div>
+
+    <!-- Interactive tabs -->
+    <div class="tabs">
+      <button class="tablink active" data-tab="details">Details</button>
+      <button class="tablink" data-tab="data-safety">Data Safety</button>
+      <button class="tablink" data-tab="support">Support</button>
+    </div>
+    <div id="details" class="tab-content active">
+      <h4>More Details</h4>
+      <p>Updated on: July 11, 2024 :contentReference[oaicite:4]{index=4}</p>
+      <p>Category: Education :contentReference[oaicite:5]{index=5}</p>
+      <p>Developer: NextDay Software Solutions Pvt Ltd :contentReference[oaicite:6]{index=6}</p>
+      <p>Contains ads; Rated PEGI 3; Designed for age 10+ downloads. :contentReference[oaicite:7]{index=7}</p>
+    </div>
+    <div id="data-safety" class="tab-content">
+      <h4>Data Safety</h4>
+      <p>Some data such as device or other IDs may be shared with third parties. :contentReference[oaicite:8]{index=8}</p>
+    </div>
+    <div id="support" class="tab-content">
+      <h4>Support</h4>
+      <p>Developer Website: <a href="http://www.nextdaysoft.com" target="_blank">www.nextdaysoft.com</a> :contentReference[oaicite:9]{index=9}</p>
+      <p>Email: info@nextdaysoft.com :contentReference[oaicite:10]{index=10}</p>
+    </div>
+
+  </div>
+
+  <script>
+    // Tab logic
+    document.querySelectorAll('.tablink').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        document.querySelectorAll('.tablink').forEach(b=>b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(tc=>tc.classList.remove('active'));
+        btn.classList.add('active');
+        const tab = btn.getAttribute('data-tab');
+        document.getElementById(tab).classList.add('active');
+      });
+    });
+  </script>
+
 </body>
 </html>
